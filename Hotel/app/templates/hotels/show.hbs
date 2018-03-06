@@ -1,0 +1,22 @@
+{{outlet}}
+
+<h1>{{model.name}}</h1>
+<br>
+<img src="{{model.picture}}" alt="{{model.name}}" width="100%">
+<h4>About us</h4>
+   <p>{{model.description}}</p>
+    <p><strong>Star: </strong>{{star-generator model.star}}</p>
+    <p><strong>Address: </strong>{{model.city}} </p>
+    <p>
+    <strong>Price: </strong>
+    {{#if model.discount}}
+            <del>{{model.currency}}{{model.price}}</del>
+            {{model.currency}}{{discount-calc model.discount price=model.price}}
+            {{else}}
+                {{model.currency}}{{model.price}}
+    {{/if}} 
+    </p>
+
+
+
+

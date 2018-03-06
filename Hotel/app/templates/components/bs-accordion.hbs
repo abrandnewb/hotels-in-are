@@ -1,0 +1,13 @@
+<p clsss='bs-accordion-error'></p>{{error}}
+ <fieldset>
+  {{input name="user.name" value=name change=(action "required")}} <br>
+  {{input name="user.department" value=department change=(action "required")}} <br>
+  {{input name="user.email" value=email change=(action "required")}}
+</fieldset>
+{{yield}}
+{{#if (has-block)}}
+<p>this component is used in a block form.</p>
+{{else}}
+<p>this component is used inline not block form.</p>
+{{/if}}
+

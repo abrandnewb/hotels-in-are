@@ -1,0 +1,33 @@
+<h1>Add new hotel</h1>
+ {{#if errorMessage}}
+     <div class="isa_error">{{errorMessage}}</div>
+ {{/if}}
+ {{#if successMessage}}
+     <div class="isa_success">{{successMessage}}</div>
+ {{/if}}
+ <div class="form2">
+    <form>
+        <div class="inner-wrap">
+            <label>Hotel Name {{input type="text" name="field1" value=name}}</label>
+            <label>City {{input type="text" name="field1" value=city}}</label>
+            <label>
+               Star{{input type="text" name="field1" value=star key-up='validateInputStars'}}
+                <span class="inlineError">{{errorStar}}</span>
+            </label>
+            <label>
+                Price {{input type="text" name="field1" value=price key-up='validateInputPrice'}}
+                <span class="inlineError">{{errorPrice}}</span>
+            </label>
+            <label>
+                Discount(%) {{input type="text" name="field1" value=discount key-up='validateInputDiscount'}}
+                <span class="inlineError">{{errorDiscount}}</span>
+            </label>
+            <label>Picture URL {{input type="text" name="field1" value=picture}}</label>
+           <label>Description {{textarea name="field2" value=description}}</label>
+        </div>
+
+        <div class="button-section">
+             <button {{action 'addHotel'}} class="button">Submit</button><br>
+        </div>
+    </form>
+</div>

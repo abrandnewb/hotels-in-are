@@ -1,0 +1,29 @@
+<h1>Edit information</h1>
+<div class="form2">
+    <form>
+        <div class="inner-wrap">
+            <label>Hotel Name {{input type="text" name="field1" value=model.name}}</label>
+            <label>City {{input type="text" name="field1" value=model.city}}</label>
+            <label>
+               Star{{input type="text" name="field1" value=model.star key-up='validateInputStars'}}
+                <span class="inlineError">{{errorStar}}</span>
+            </label>
+            <label>
+                Price {{input type="text" name="field1" value=model.price key-up='validateInputPrice'}}
+                <span class="inlineError">{{errorPrice}}</span>
+            </label>
+            <label>
+                Discount(%) {{input type="text" name="field1" value=model.discount key-up='validateInputDiscount'}}
+                <span class="inlineError">{{errorDiscount}}</span>
+            </label>
+            <label>Picture URL {{input type="text" name="field1" value=model.picture}}</label>
+           <label>Description {{textarea name="field2" value=model.description}}</label>
+        </div>
+
+        <div class="button-section">
+             <button {{action 'editHotel' model.id}} class="button">Submit</button>
+        </div>
+    </form>
+</div>
+  
+

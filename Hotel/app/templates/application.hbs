@@ -1,0 +1,50 @@
+<div class="width">
+		<div id="sitename">
+		
+				<h1>{{#link-to 'hotels'}}Hotels in Åre{{/link-to}}</h1>
+
+				<nav>
+					<ul>
+        					<li>{{#link-to 'hotels'}}Hotels{{/link-to}}</li>
+        	    			<li>{{#link-to 'hotels.new'}}Add hotel{{/link-to}}</li>
+         	   				<li>{{#link-to 'info'}}Info{{/link-to}}</li>
+          	        </ul>
+				</nav>
+	
+				<div class="clear"></div>
+			
+		</div>
+		
+		<section id="body" class="clear">
+			<aside id="sidebar" class="column-left">
+				<ul>
+                	<li>
+						<h4>Filter</h4>
+                        <ul class="blocklist">
+                            <!--<li class="selected-item"><a href="index.html">Stars</a></li>-->
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+                        <h4>Price range</h4>
+                        <ul class="blocklist">
+                            <li><a href="#">200</a></li>
+                            <li><a href="#">300</a></li>
+                            <li><a href="#">400</a></li>
+                        </ul>
+					</li>					
+				</ul>
+			</aside>
+        <section id="content" class="column-right">
+                {{outlet}}            	
+		</section>
+	</section>	
+    <footer class="clear">			
+ 	    <div class="footer-bottom">
+            <p>&copy; Hotels in Åre 2018.</p>
+         </div>			
+    </footer>
+
+</div>
+

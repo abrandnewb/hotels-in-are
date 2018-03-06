@@ -1,0 +1,32 @@
+{{outlet}}
+<br><br>
+<h1>Available hotels</h1>
+{{!-- display hotels list via a component--}}
+<article>
+    {{list-hotels isLoggedIn=isLoggedIn deleteHotel=(action 'deleteHotel') hotels=model}}
+</article>
+
+
+{{!--
+{{#each model as |hotel|}}
+<article>
+{{#link-to 'hotels.show' hotel.id}}
+    <img src="{{hotel.picture}}" alt="{{hotel.name}}" width="160px"> 
+{{/link-to}}
+<h4 class="hotel-name">{{hotel.name}}</h4>
+
+    <p>Address: {{hotel.city}}</p>
+<p>Price: {{hotel.currency}}{{hotel.price}} </p>
+<p>Star: {{star-generator hotel.star}}</p>
+
+{{#link-to 'hotels.edit' hotel.id class="button"}}edit{{/link-to}}
+<button {{action 'deleteHotel' hotel.id}} class="button delete-hotel">Delete</button>
+{{#link-to 'hotels.show' hotel.id class="button hotel-detail"}}Detail{{/link-to}}
+<hr>
+</article>
+{{/each}} 
+--}}
+
+
+
+

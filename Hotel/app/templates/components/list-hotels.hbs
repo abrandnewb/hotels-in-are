@@ -1,0 +1,39 @@
+{{#each hotels as |hotel|}}
+  <h4 class="">{{hotel.name}}</h4>
+  <div class="left">
+      {{#link-to 'hotels.show' hotel.id}}
+        <img src="{{hotel.picture}}" alt="{{hotel.name}}" width="160px"> 
+    {{/link-to}}
+  </div>
+  <div class="right">
+      <p>Address: {{hotel.city}}</p>
+    <p>
+        Price: 
+        {{#if hotel.discount}}
+            <del>{{hotel.currency}}{{hotel.price}}</del>
+            {{hotel.currency}}{{discount-calc hotel.discount price=hotel.price}}
+            {{else}}
+                {{hotel.currency}}{{hotel.price}}
+        {{/if}} 
+    </p>
+    <p>Star: {{star-generator hotel.star}}</p>
+  </div>
+   <br>
+    {{#if isLoggedIn}}
+        {{#link-to 'hotels.edit' hotel.id class="button"}}Edit{{/link-to}}
+        <button {{action 'deleteHotel' hotel.id}} class="delete-hotel">Delete</button>
+        {{! calling action deleteHotel in the component js, it then calls deleteHotel action in controller}}
+         {{#link-to 'hotels.show' hotel.id class="button hotel-name"}}Details{{/link-to}}
+         {{else}}
+              {{#link-to 'hotels.show' hotel.id class="button"}}Details{{/link-to}}
+    {{/if}}
+   
+    <br>
+    <hr>
+    <br>
+
+{{/each}}
+
+
+
+
